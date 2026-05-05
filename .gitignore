@@ -1,0 +1,8 @@
+.DS_Store
+*.html
+*_cache/
+.snakemake/
+.Rproj.user/
+outputs/
+scratch/
+
