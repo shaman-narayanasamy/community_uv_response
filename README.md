@@ -1,8 +1,8 @@
-# phage_uv_resistance
+# community_uv_response
 
-Reusable UV/DNA-damage signature and inStrain SNV module for metagenomic MAG analyses.
+Reusable UV/DNA-damage signature and inStrain SNV module for microbial community and rMAG analyses.
 
-This repository is intentionally dataset-agnostic. It accepts dereplicated MAG FASTA files, metagenomic read mappings, gene annotations, UV/DNA-damage signature definitions, and sample metadata, then produces reusable tables for downstream manuscript or comparative analyses.
+This repository is intentionally dataset-agnostic. It accepts dereplicated MAG FASTA files, metagenomic read mappings, gene annotations, UV/DNA-damage signature definitions, and sample metadata, then produces reusable tables for downstream manuscript or comparative analyses. Phage-host ecology can be integrated downstream, but this module tracks community-level UV/DNA-damage response and strain divergence rather than UV resistance in phages.
 
 ## Current scope
 
@@ -35,3 +35,7 @@ Planned stable outputs:
 ## Interpretation guardrails
 
 SNV results should be interpreted as strain-level divergence or microdiversity under experimental conditions. They should not be described as direct evidence that UV caused specific mutations without additional validation.
+
+## HPC Codex handoff
+
+When working directly on the HPC, start with `docs/hpc_codex_handoff.md`. It records the current branch, scope, expected upstream outputs, first smoke tests, and the next implementation targets so a Codex session on the cluster does not need this chat context.
