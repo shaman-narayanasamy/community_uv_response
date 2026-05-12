@@ -1,0 +1,5 @@
+MAG_ID	gene_id	gene_symbol	gene_function
+MAG1	gene1	uvrA	excinuclease ABC subunit A
+MAG1	gene2		blue-light DNA photolyase family protein
+MAG2	gene3	recA	recombinase A
+MAG2	gene4	katG	catalase-peroxidase

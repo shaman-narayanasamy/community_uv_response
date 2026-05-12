@@ -1,0 +1,5 @@
+MAG_ID	signature_tier	signature_category	n_signature_genes	n_unique_signature_symbols
+MAG1	1	nucleotide_excision_repair	1	1
+MAG1	1	photoreactivation	1	1
+MAG2	2	SOS_response	1	1
+MAG2	3	oxidative_stress	1	1

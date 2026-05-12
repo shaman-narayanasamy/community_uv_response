@@ -48,7 +48,16 @@ From `host_phage_linking`:
 
 - `resources/uv_resistance_signatures.tsv`: curated UV/DNA-damage signature definitions.
 - `scripts/validate_uv_signatures.R`: validates the signature TSV schema.
+- `scripts/match_uv_signatures.py`: maps annotations to signature hits and MAG summaries.
+- `scripts/prepare_bakta_annotations.py`: normalizes Bakta TSVs into the required annotation table.
+- `scripts/prepare_bam_manifest.py`: creates a BAM manifest from metadata and a configured BAM path pattern.
+- `scripts/summarize_uv_expression.py`: optionally joins long-format expression counts to UV hits.
+- `scripts/generate_instrain_manifest.py`: builds the inStrain profile manifest from metadata and BAM paths.
+- `scripts/parse_instrain_compare.py`: normalizes fixture-backed inStrain compare summaries.
 - `scripts/run_instrain_hpc_template.sh`: template for running inStrain profiles/compare from rMAG BAMs.
+- `workflows/community_uv_response.smk`: main reusable Snakemake entrypoint.
+- `config/examples/PRJEB79569_config.yml`: placeholder config shaped for the current project.
+- `tests/run_fixture_tests.sh`: exact-output regression tests using tiny TSV fixtures.
 - `docs/output_contract.md`: planned output table contracts.
 
 ## First smoke tests on HPC
@@ -58,6 +67,11 @@ Run these before implementing against large data:
 ```sh
 Rscript scripts/validate_uv_signatures.R resources/uv_resistance_signatures.tsv
 bash -n scripts/run_instrain_hpc_template.sh
+bash tests/run_fixture_tests.sh
+snakemake --snakefile workflows/community_uv_response.smk \
+  --configfile config/local_PRJEB79569.yml \
+  --cores 16 \
+  --dry-run
 ```
 
 Then create a tiny temporary annotation table with columns:
@@ -76,12 +90,11 @@ annotation table + resources/uv_resistance_signatures.tsv
 
 ## Recommended next implementation order
 
-1. Implement annotation-to-UV-signature matching.
-2. Add a tiny fixture annotation table and expected outputs.
-3. Add command-line validation for required input columns.
-4. Implement rMAG-level UV signature summaries.
-5. Implement inStrain profile manifest generation from sample metadata and BAM paths.
-6. Add inStrain compare summary parsing only after real profile/compare outputs exist.
+1. Create an ignored local config from `config/examples/PRJEB79569_config.yml`.
+2. Run the fixture tests and Snakemake dry-run on the HPC environment.
+3. Point the config at real multiomics annotation, metadata, BAM manifest, and rMAG FASTA paths.
+4. Validate inStrain profile execution on one or two metagenomic BAMs before enabling all samples.
+5. Replace fixture-backed compare input with real inStrain comparison summaries once available.
 
 ## Interpretation guardrails
 

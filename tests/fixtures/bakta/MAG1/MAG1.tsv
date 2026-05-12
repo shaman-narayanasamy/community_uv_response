@@ -1,0 +1,4 @@
+Sequence Id	Type	Start	Stop	Strand	Locus Tag	Gene	Product
+contig1	CDS	1	99	+	MAG1_00001	uvrA	excinuclease ABC subunit A
+contig1	tRNA	100	130	+	MAG1_t001		tRNA-Met
+contig1	CDS	140	220	-	MAG1_00002		DNA photolyase family protein

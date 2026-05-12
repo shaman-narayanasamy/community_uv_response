@@ -1,0 +1,4 @@
+MAG_ID	gene_id	sample_id	condition	phase	cycle	analysis_group	raw_count	normalized_count	signature_tier	signature_category
+MAG1	gene1	S1	control	before	1	control_before	10	1.5	1	nucleotide_excision_repair
+MAG1	gene1	S2	uv	after	1	uv_after	15	2.0	1	nucleotide_excision_repair
+MAG2	gene3	S2	uv	after	1	uv_after	8	0.9	2	SOS_response

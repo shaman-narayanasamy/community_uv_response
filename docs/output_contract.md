@@ -13,7 +13,7 @@ This file defines the planned stable outputs for downstream analysis repositorie
 - `signature_tier`
 - `signature_category`
 - `signature_gene_symbol`
-- `match_type`
+- `match_type`: `gene_symbol`, `synonym`, or `product_regex`
 
 `uv_signature_mag_summary.tsv`
 
@@ -44,7 +44,7 @@ This file defines the planned stable outputs for downstream analysis repositorie
 - `sample_id`
 - `bam_path`
 - `profile_dir`
-- `status`
+- `status`: `ready` when the BAM exists, otherwise `missing_bam`
 - `notes`
 
 `instrain_compare_summary.tsv`
@@ -69,5 +69,4 @@ This file defines the planned stable outputs for downstream analysis repositorie
 - `n_valid_pairs`
 - `mean_snv_distance`
 - `mean_popani`
-- `interpretation_status`
-
+- `interpretation_status`: currently `strain_divergence_summary`

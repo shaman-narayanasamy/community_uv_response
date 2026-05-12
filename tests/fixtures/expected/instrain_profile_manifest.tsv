@@ -1,0 +1,3 @@
+sample_id	bam_path	profile_dir	status	notes
+S1	/tmp/community_uv_response_fixture/S1.rmag.bam	/tmp/community_uv_response_test/profiles/S1	missing_bam	BAM path is missing or does not exist
+S2	/tmp/community_uv_response_fixture/S2.rmag.bam	/tmp/community_uv_response_test/profiles/S2	missing_bam	BAM path is missing or does not exist
