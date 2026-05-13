@@ -6,8 +6,9 @@ This document is for Codex sessions running directly on the HPC. It is the minim
 
 - GitHub: `git@github.com:shaman-narayanasamy/community_uv_response.git`
 - Current integration branch: `dev`
-- Current working PR branch: `feature/initial-uv-module-scaffold`
-- Open PR: `https://github.com/shaman-narayanasamy/community_uv_response/pull/6`
+- Current working PR branch: `feature/community-uv-snakemake-module`
+- Open draft PR: `https://github.com/shaman-narayanasamy/community_uv_response/pull/7`
+- Latest implementation commit: `91b5672 Add community UV Snakemake module`
 - Old repo name: `phage_uv_resistance`; GitHub redirects should work, but new work should use `community_uv_response`.
 
 Clone or update on HPC:
@@ -17,8 +18,54 @@ mkdir -p ~/repositories/github
 cd ~/repositories/github
 git clone git@github.com:shaman-narayanasamy/community_uv_response.git
 cd community_uv_response
-git switch feature/initial-uv-module-scaffold
+git switch feature/community-uv-snakemake-module
 git pull --ff-only
+```
+
+## Current PRJEB79569 state on HPC
+
+The reusable module is implemented and pushed in draft PR #7. A local ignored
+config was created at `config/local_PRJEB79569.yml` in the working checkout; it
+is intentionally not committed because it contains scratch paths.
+
+The generated project BAM manifest is:
+
+```text
+/scratch/users/snarayanasamy/phage_uv_treatment/metadata/rmag_metagenomic_bams.tsv
+```
+
+It maps the 12 biological sample IDs from
+`/scratch/users/snarayanasamy/phage_uv_treatment/metadata/PRJEB79569_binning_input.tsv`
+to expected upstream binning BAM paths like:
+
+```text
+/scratch/users/snarayanasamy/phage_uv_treatment/output/PRJEB79569/binning/CBF1/CBF1_metaG.reads.sorted.bam
+```
+
+The real PRJEB79569 dry-run currently blocks on a missing normalized annotation
+table:
+
+```text
+/scratch/users/snarayanasamy/phage_uv_treatment/metadata/rmag_gene_annotations.tsv
+```
+
+Once upstream Bakta outputs exist under the multiomics annotation output,
+normalize them with:
+
+```sh
+python scripts/prepare_bakta_annotations.py \
+  --bakta-root /scratch/users/snarayanasamy/phage_uv_treatment/output/PRJEB79569/annotation/bakta \
+  --output /scratch/users/snarayanasamy/phage_uv_treatment/metadata/rmag_gene_annotations.tsv
+```
+
+Then retry:
+
+```sh
+conda run -n snakemake_env snakemake \
+  --snakefile workflows/community_uv_response.smk \
+  --configfile config/local_PRJEB79569.yml \
+  --cores 1 \
+  --dry-run
 ```
 
 ## Scientific scope
@@ -65,36 +112,29 @@ From `host_phage_linking`:
 Run these before implementing against large data:
 
 ```sh
-Rscript scripts/validate_uv_signatures.R resources/uv_resistance_signatures.tsv
 bash -n scripts/run_instrain_hpc_template.sh
+python -m py_compile scripts/*.py
 bash tests/run_fixture_tests.sh
-snakemake --snakefile workflows/community_uv_response.smk \
-  --configfile config/local_PRJEB79569.yml \
-  --cores 16 \
-  --dry-run
+conda run -n snakemake_env snakemake \
+  --snakefile workflows/community_uv_response.smk \
+  --configfile config/examples/fixture_config.yml \
+  --cores 1 \
+  --dry-run \
+  --forceall
 ```
 
-Then create a tiny temporary annotation table with columns:
-
-```text
-MAG_ID	gene_id	gene_symbol	gene_function
-```
-
-Use it to develop and test the first real executable target:
-
-```text
-annotation table + resources/uv_resistance_signatures.tsv
-  -> uv_signature_hits.tsv
-  -> uv_signature_mag_summary.tsv
-```
+`Rscript scripts/validate_uv_signatures.R resources/uv_resistance_signatures.tsv`
+is also useful when `Rscript` is available; it was not available in the shell
+used for PR #7.
 
 ## Recommended next implementation order
 
-1. Create an ignored local config from `config/examples/PRJEB79569_config.yml`.
-2. Run the fixture tests and Snakemake dry-run on the HPC environment.
-3. Point the config at real multiomics annotation, metadata, BAM manifest, and rMAG FASTA paths.
-4. Validate inStrain profile execution on one or two metagenomic BAMs before enabling all samples.
-5. Replace fixture-backed compare input with real inStrain comparison summaries once available.
+1. Wait for upstream multiomics binning/annotation outputs to finish.
+2. Normalize Bakta TSVs into `rmag_gene_annotations.tsv`.
+3. Re-run the real PRJEB79569 Snakemake dry-run with `config/local_PRJEB79569.yml`.
+4. Inspect `uv_signature_hits.tsv` and `uv_signature_mag_summary.tsv` before running inStrain.
+5. Validate inStrain profile execution on one or two metagenomic BAMs before enabling all samples.
+6. Replace fixture-backed compare input with real inStrain comparison summaries once available.
 
 ## Interpretation guardrails
 
