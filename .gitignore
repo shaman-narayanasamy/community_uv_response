@@ -1,8 +1,10 @@
 .DS_Store
+__pycache__/
 *.html
 *_cache/
 .snakemake/
 .Rproj.user/
 outputs/
 scratch/
-
+config/local*.yml
+config/*_local.yml

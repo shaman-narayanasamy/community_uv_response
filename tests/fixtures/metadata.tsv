@@ -1,0 +1,3 @@
+sample_alias	condition	phase	cycle	analysis_group
+S1	control	before	1	control_before
+S2	uv	after	1	uv_after

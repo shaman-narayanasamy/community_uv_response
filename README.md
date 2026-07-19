@@ -23,14 +23,58 @@ Expected inputs are provided by a project-specific manifest or config:
 
 ## Outputs
 
-Planned stable outputs:
+Stable outputs:
 
 - `uv_signature_hits.tsv`
 - `uv_signature_mag_summary.tsv`
-- `uv_signature_expression_summary.tsv`
+- `uv_signature_expression_summary.tsv` when expression counts are configured
 - `instrain_profile_manifest.tsv`
-- `instrain_compare_summary.tsv`
-- `rmag_snv_divergence.tsv`
+- `instrain_compare_summary.tsv` when an inStrain comparison table is configured
+- `rmag_snv_divergence.tsv` when an inStrain comparison table is configured
+
+## Snakemake workflow
+
+Copy `config/examples/PRJEB79569_config.yml`, replace the placeholder paths, and
+keep real HPC paths in an ignored local config such as
+`config/local_PRJEB79569.yml`.
+
+```sh
+snakemake --snakefile workflows/community_uv_response.smk \
+  --configfile config/local_PRJEB79569.yml \
+  --cores 16 \
+  --dry-run
+```
+
+The workflow runs reusable Python transformation scripts for UV signature
+matching, optional expression joins, inStrain profile manifest generation, and
+fixture-backed inStrain comparison summaries. Set `instrain.run_profiles: true`
+only when the configured metagenomic BAMs and rMAG FASTA are available on the
+HPC and `inStrain` is on the execution path.
+
+If upstream Bakta or BAM outputs need to be normalized first:
+
+```sh
+python scripts/prepare_bakta_annotations.py \
+  --bakta-root /path/to/multiomics/output/annotation/bakta \
+  --output /path/to/project/metadata/rmag_gene_annotations.tsv
+
+python scripts/prepare_bam_manifest.py \
+  --metadata /path/to/project/metadata/PRJEB79569_multiomics_samples.tsv \
+  --sample-column sample_alias \
+  --bam-pattern '/path/to/rmag_bams/{sample_id}/{sample_id}.rmag.bam' \
+  --output /path/to/project/metadata/rmag_metagenomic_bams.tsv
+```
+
+## Fixture tests
+
+Run the small local regression tests with:
+
+```sh
+bash tests/run_fixture_tests.sh
+```
+
+These tests validate exact TSV outputs without requiring Snakemake, R, or
+inStrain.
 
 ## Interpretation guardrails
 
