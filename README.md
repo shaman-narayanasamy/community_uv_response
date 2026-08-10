@@ -60,7 +60,9 @@ If upstream Bakta or BAM outputs need to be normalized first:
 ```sh
 python scripts/prepare_bakta_annotations.py \
   --bakta-root /path/to/multiomics/output/annotation/bakta \
-  --output /path/to/project/metadata/rmag_gene_annotations.tsv
+  --output /path/to/project/metadata/rmag_gene_annotations.tsv \
+  --duplicates-output /path/to/project/metadata/rmag_gene_annotation_duplicates.tsv \
+  --fail-on-conflicts
 
 python scripts/prepare_bam_manifest.py \
   --metadata /path/to/project/metadata/PRJEB79569_multiomics_samples.tsv \
@@ -68,6 +70,13 @@ python scripts/prepare_bam_manifest.py \
   --bam-pattern '/path/to/rmag_bams/{sample_id}/{sample_id}.rmag.bam' \
   --output /path/to/project/metadata/rmag_metagenomic_bams.tsv
 ```
+
+The Bakta normalizer reads comment-prefixed Bakta headers, accepts lowercase
+`cds` feature types, and selects only primary annotation tables. Companion
+`.inference.tsv` and `.hypotheticals.tsv` files are excluded. Duplicate
+`MAG_ID`/`gene_id` pairs are deduplicated into the audit table; use
+`--fail-on-conflicts` to prevent an annotation output when their annotations
+disagree.
 
 ## Fixture tests
 

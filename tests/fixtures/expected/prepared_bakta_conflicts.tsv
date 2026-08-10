@@ -1,0 +1,2 @@
+MAG_ID	gene_id	duplicate_status	first_source	duplicate_source	first_gene_symbol	first_gene_function	duplicate_gene_symbol	duplicate_gene_function
+MAG_DUP	DUP_00001	conflicting_duplicate	MAG_DUP/MAG_DUP.tsv	MAG_DUP/MAG_DUP.tsv	uvrA	excinuclease ABC subunit A	uvrB	excinuclease ABC subunit B

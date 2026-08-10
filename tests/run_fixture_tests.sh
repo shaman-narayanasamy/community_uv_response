@@ -15,7 +15,20 @@ python "$ROOT/scripts/match_uv_signatures.py" \
 
 python "$ROOT/scripts/prepare_bakta_annotations.py" \
   --bakta-root "$ROOT/tests/fixtures/bakta" \
-  --output "$TMP_DIR/prepared_bakta_annotations.tsv"
+  --output "$TMP_DIR/prepared_bakta_annotations.tsv" \
+  --duplicates-output "$TMP_DIR/prepared_bakta_duplicates.tsv"
+
+if python "$ROOT/scripts/prepare_bakta_annotations.py" \
+  --bakta-root "$ROOT/tests/fixtures/bakta_conflict" \
+  --output "$TMP_DIR/prepared_bakta_conflict_annotations.tsv" \
+  --duplicates-output "$TMP_DIR/prepared_bakta_conflicts.tsv" \
+  --fail-on-conflicts
+then
+  echo "Expected conflicting Bakta duplicate detection to fail" >&2
+  exit 1
+fi
+
+test ! -e "$TMP_DIR/prepared_bakta_conflict_annotations.tsv"
 
 python "$ROOT/scripts/prepare_bam_manifest.py" \
   --metadata "$ROOT/tests/fixtures/metadata.tsv" \
@@ -49,6 +62,8 @@ for name in \
   instrain_compare_summary.tsv \
   rmag_snv_divergence.tsv \
   prepared_bakta_annotations.tsv \
+  prepared_bakta_duplicates.tsv \
+  prepared_bakta_conflicts.tsv \
   prepared_bam_manifest.tsv
 do
   diff -u "$ROOT/tests/fixtures/expected/$name" "$TMP_DIR/$name"

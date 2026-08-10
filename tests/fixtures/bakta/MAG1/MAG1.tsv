@@ -1,4 +1,8 @@
-Sequence Id	Type	Start	Stop	Strand	Locus Tag	Gene	Product
-contig1	CDS	1	99	+	MAG1_00001	uvrA	excinuclease ABC subunit A
-contig1	tRNA	100	130	+	MAG1_t001		tRNA-Met
-contig1	CDS	140	220	-	MAG1_00002		DNA photolyase family protein
+# Annotated with Bakta
+# Software: v1.12.0
+# Database: v6.0, full
+#Sequence Id	Type	Start	Stop	Strand	Locus Tag	Gene	Product	DbXrefs
+contig1	cds	1	99	+	MAG1_00001	uvrA	excinuclease ABC subunit A	SO:0001217
+contig1	tRNA	100	130	+	MAG1_t001		tRNA-Met	SO:0000253
+contig1	cds	140	220	-	MAG1_00002		DNA photolyase family protein	SO:0001217
+contig1	cds	1	99	+	MAG1_00001	uvrA	excinuclease ABC subunit A	SO:0001217
