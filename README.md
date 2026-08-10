@@ -4,6 +4,10 @@ Reusable UV/DNA-damage signature and inStrain SNV module for microbial community
 
 This repository is intentionally dataset-agnostic. It accepts dereplicated MAG FASTA files, metagenomic read mappings, gene annotations, UV/DNA-damage signature definitions, and sample metadata, then produces reusable tables for downstream manuscript or comparative analyses. Phage-host ecology can be integrated downstream, but this module tracks community-level UV/DNA-damage response and strain divergence rather than UV resistance in phages.
 
+For PRJEB79569, this module is an optional downstream annotation and descriptive
+population-genomics component. It must not replace transcriptome-wide modeling
+or be used to preselect the gene universe for differential expression.
+
 ## Current scope
 
 - Map gene annotations to curated UV/DNA-damage resistance signatures.
