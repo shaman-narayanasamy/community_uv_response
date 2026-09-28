@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Template only: edit paths before running on HPC.
-# Use metagenomic reads/BAMs only. Do not use metatranscriptomic reads for SNV calls.
+# Call variants from metagenomic read alignments.
 
 RMAG_FASTA="${RMAG_FASTA:-/isilon/path/to/phage_uv_treatment/rMAGs/all_dereplicated_rMAGs.fa}"
 SAMPLE_METADATA="${SAMPLE_METADATA:-metadata/sample_metadata.tsv}"
@@ -34,4 +34,3 @@ if [[ "${#profile_dirs[@]}" -gt 1 && -d "${profile_dirs[0]}" ]]; then
 else
   printf 'Not enough inStrain profile directories for compare.\n' >&2
 fi
-
