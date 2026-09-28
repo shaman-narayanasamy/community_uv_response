@@ -1,0 +1,6 @@
+entity_type	entity_id	MAG_ID	gene_id	gene_symbol	gene_function	signature_tier	signature_category	signature_gene_symbol	match_type
+MAG	MAG1	MAG1	gene1	uvrA	excinuclease ABC subunit A	1	nucleotide_excision_repair	uvrA	gene_symbol
+MAG	MAG1	MAG1	gene2		blue-light DNA photolyase family protein	1	photoreactivation	phr	product_regex
+MAG	MAG2	MAG2	gene3	recA	recombinase A	2	SOS_response	recA	gene_symbol
+MAG	MAG2	MAG2	gene4	katG	catalase-peroxidase	3	oxidative_stress	katG	gene_symbol
+vOTU	vOTU1	vOTU1	vgene1		DNA photolyase domain protein	1	photoreactivation	phr	product_regex

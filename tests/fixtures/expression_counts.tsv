@@ -1,0 +1,6 @@
+gene_id	sample_id	raw_count	normalized_count
+gene1	S1	10	1.5
+gene1	S2	15	2.0
+gene3	S2	8	0.9
+vgene1	S2	6	0.7
+geneX	S1	99	9.9

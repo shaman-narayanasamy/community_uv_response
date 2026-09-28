@@ -1,0 +1,5 @@
+tier	category	gene_symbol	synonyms	product_regex	specificity	rationale
+1	nucleotide_excision_repair	uvrA	excinuclease ABC subunit A	excinuclease ABC subunit A|UvrA	high	Damage-recognition component of bacterial nucleotide excision repair.
+1	photoreactivation	phr	phrB;deoxyribodipyrimidine photolyase	photolyase|DNA photolyase	high	Direct repair of UV-induced pyrimidine dimers.
+2	SOS_response	recA	recombinase A	RecA|recombinase A	medium	Central DNA-damage response and homologous recombination factor.
+3	oxidative_stress	katG	catalase-peroxidase	catalase-peroxidase|KatG	low	General oxidative stress buffering; supportive context only.

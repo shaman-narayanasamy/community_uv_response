@@ -1,0 +1,4 @@
+sample_id	run_id	data_type	path
+S1	S1_MG_R1	metagenomics	tests/fixtures/coverage/S1_MG_R1.tsv
+S1	S1_MG_R2	metagenomics	tests/fixtures/coverage/S1_MG_R2.tsv
+S2	S2_MT_R1	metatranscriptomics	tests/fixtures/coverage/S2_MT_R1.tsv

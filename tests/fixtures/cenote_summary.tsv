@@ -1,0 +1,2 @@
+contig	gene_name	gene_orient	gene_start	gene_stop	contig_length	dtr_seq	evidence_acession	evidence_description	Evidence_source	vscore_category	chunk_name	chunk_length	chunk_start	chunk_stop
+output_1	vgene1	+	1	120	1000		PFAM:PF00000	DNA photolyase domain protein	rep_hall_hmm	common_virus	NaN		0	1000

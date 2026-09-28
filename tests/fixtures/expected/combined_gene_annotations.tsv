@@ -1,0 +1,4 @@
+entity_type	entity_id	MAG_ID	gene_id	gene_symbol	gene_function
+MAG	MAG1	MAG1	MAG1_00001	uvrA	excinuclease ABC subunit A
+MAG	MAG1	MAG1	MAG1_00002		DNA photolyase family protein
+vOTU	vOTU1	vOTU1	vgene1		DNA photolyase domain protein

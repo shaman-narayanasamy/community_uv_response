@@ -1,0 +1,6 @@
+entity_type	entity_id	MAG_ID	gene_id	gene_symbol	gene_function
+MAG	MAG1	MAG1	gene1	uvrA	excinuclease ABC subunit A
+MAG	MAG1	MAG1	gene2		blue-light DNA photolyase family protein
+MAG	MAG2	MAG2	gene3	recA	recombinase A
+MAG	MAG2	MAG2	gene4	katG	catalase-peroxidase
+vOTU	vOTU1	vOTU1	vgene1		DNA photolyase domain protein

@@ -1,0 +1,15 @@
+---
+output_dir: "/tmp/community_uv_response_snakemake_fixture"
+annotation_table: "tests/fixtures/annotations.tsv"
+sample_metadata: "tests/fixtures/metadata.tsv"
+bam_manifest: "tests/fixtures/bam_manifest.tsv"
+rmag_fasta: "tests/fixtures/rmags.fa"
+signature_table: "tests/fixtures/signatures.tsv"
+expression_counts: "tests/fixtures/expression_counts.tsv"
+gene_coverage_manifest: "tests/fixtures/gene_coverage_manifest.tsv"
+
+instrain:
+  threads: 2
+  run_profiles: false
+  profile_root: "/tmp/community_uv_response_snakemake_fixture/instrain/profiles"
+  compare_table: "tests/fixtures/instrain_compare.tsv"

@@ -1,0 +1,2 @@
+MAG_ID	gene_id	duplicate_status	first_source	duplicate_source	first_gene_symbol	first_gene_function	duplicate_gene_symbol	duplicate_gene_function
+MAG1	MAG1_00001	exact_duplicate	MAG1/MAG1.tsv	MAG1/MAG1.tsv	uvrA	excinuclease ABC subunit A	uvrA	excinuclease ABC subunit A

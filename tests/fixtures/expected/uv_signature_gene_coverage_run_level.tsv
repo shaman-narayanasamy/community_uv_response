@@ -1,0 +1,9 @@
+entity_type	entity_id	MAG_ID	gene_id	sample_id	run_id	data_type	condition	phase	cycle	analysis_group	comparison_group	raw_count	covered_bases	gene_length	breadth	signature_tier	signature_category	signature_gene_symbol
+MAG	MAG1	MAG1	gene1	S1	S1_MG_R1	metagenomics	control	before	1	control_before	control_cycle1	5	80	100	0.8000000	1	nucleotide_excision_repair	uvrA
+MAG	MAG2	MAG2	gene3	S1	S1_MG_R1	metagenomics	control	before	1	control_before	control_cycle1	3	50	100	0.5000000	2	SOS_response	recA
+vOTU	vOTU1	vOTU1	vgene1	S1	S1_MG_R1	metagenomics	control	before	1	control_before	control_cycle1	2	40	120	0.3333333	1	photoreactivation	phr
+MAG	MAG1	MAG1	gene1	S1	S1_MG_R2	metagenomics	control	before	1	control_before	control_cycle1	7	70	100	0.7000000	1	nucleotide_excision_repair	uvrA
+vOTU	vOTU1	vOTU1	vgene1	S1	S1_MG_R2	metagenomics	control	before	1	control_before	control_cycle1	1	20	120	0.1666667	1	photoreactivation	phr
+MAG	MAG1	MAG1	gene1	S2	S2_MT_R1	metatranscriptomics	uv	after	1	uv_after	uv_cycle1	9	90	100	0.9000000	1	nucleotide_excision_repair	uvrA
+MAG	MAG2	MAG2	gene3	S2	S2_MT_R1	metatranscriptomics	uv	after	1	uv_after	uv_cycle1	4	60	100	0.6000000	2	SOS_response	recA
+vOTU	vOTU1	vOTU1	vgene1	S2	S2_MT_R1	metatranscriptomics	uv	after	1	uv_after	uv_cycle1	6	72	120	0.6000000	1	photoreactivation	phr

@@ -1,0 +1,44 @@
+tier	category	gene_symbol	synonyms	product_regex	specificity	rationale
+1	photoreactivation	phr	phrB;deoxyribodipyrimidine photolyase	photolyase|deoxyribodipyrimidine photolyase|DNA photolyase	high	Direct repair of UV-induced pyrimidine dimers.
+1	photoreactivation	splB	spore photoproduct lyase	spore photoproduct lyase|SP lyase	medium	Repairs UV-associated spore photoproduct lesions where present.
+1	nucleotide_excision_repair	uvrA	excinuclease ABC subunit A	excinuclease ABC subunit A|UvrA	high	Damage-recognition component of bacterial nucleotide excision repair.
+1	nucleotide_excision_repair	uvrB	excinuclease ABC subunit B	excinuclease ABC subunit B|UvrB	high	Nucleotide excision repair helicase/damage verification component.
+1	nucleotide_excision_repair	uvrC	excinuclease ABC subunit C	excinuclease ABC subunit C|UvrC	high	Nucleotide excision repair incision component.
+1	nucleotide_excision_repair	uvrD	DNA helicase II	DNA helicase II|UvrD	high	Helicase used in nucleotide excision repair after incision.
+1	nucleotide_excision_repair	mfd	transcription-repair coupling factor	transcription-repair coupling factor|mutation frequency decline	medium	Couples transcription-blocking DNA lesions to repair.
+2	SOS_response	recA	recombinase A	RecA|recombinase A	medium	Central DNA-damage response and homologous recombination factor.
+2	SOS_response	lexA	SOS response repressor	LexA|SOS response repressor	medium	Regulates SOS induction after DNA damage.
+2	SOS_response	umuC	DNA polymerase V subunit UmuC	UmuC|DNA polymerase V	medium	Error-prone DNA-damage tolerance polymerase.
+2	SOS_response	umuD	DNA polymerase V subunit UmuD	UmuD|DNA polymerase V	medium	Error-prone DNA-damage tolerance polymerase component.
+2	SOS_response	dinB	DNA polymerase IV	DinB|DNA polymerase IV	medium	Damage-inducible translesion polymerase.
+2	SOS_response	sulA	cell division inhibitor SulA	SulA|SOS cell division inhibitor	low	SOS-associated cell division arrest marker.
+2	SOS_response	recN	DNA repair protein RecN	RecN|DNA repair protein RecN	medium	Double-strand break and SOS-associated repair marker.
+2	recombination_repair	recB	exodeoxyribonuclease V beta subunit	RecB|exodeoxyribonuclease V	medium	RecBCD pathway for double-strand break repair.
+2	recombination_repair	recC	exodeoxyribonuclease V gamma subunit	RecC|exodeoxyribonuclease V	medium	RecBCD pathway for double-strand break repair.
+2	recombination_repair	recD	exodeoxyribonuclease V alpha subunit	RecD|exodeoxyribonuclease V	medium	RecBCD pathway for double-strand break repair.
+2	recombination_repair	recF	recombination protein RecF	RecF|recombination protein RecF	medium	RecFOR recombinational repair pathway.
+2	recombination_repair	recO	recombination protein RecO	RecO|recombination protein RecO	medium	RecFOR recombinational repair pathway.
+2	recombination_repair	recR	recombination protein RecR	RecR|recombination protein RecR	medium	RecFOR recombinational repair pathway.
+2	recombination_repair	ruvA	Holliday junction branch migration protein RuvA	RuvA|Holliday junction branch migration	medium	Resolution/processing of recombination intermediates.
+2	recombination_repair	ruvB	Holliday junction branch migration protein RuvB	RuvB|Holliday junction branch migration	medium	Resolution/processing of recombination intermediates.
+2	recombination_repair	ruvC	Holliday junction resolvase RuvC	RuvC|Holliday junction resolvase	medium	Resolution of recombination intermediates.
+2	recombination_repair	radA	DNA repair protein RadA	RadA|DNA repair protein RadA	medium	Recombination and DNA repair-associated ATPase.
+3	base_excision_oxidative_repair	mutM	fpg;formamidopyrimidine-DNA glycosylase	formamidopyrimidine-DNA glycosylase|Fpg|MutM	medium	Repairs oxidized purines; contextual oxidative DNA-damage marker.
+3	base_excision_oxidative_repair	mutY	adenine DNA glycosylase	adenine DNA glycosylase|MutY	medium	Repairs oxidative mismatch lesions.
+3	base_excision_oxidative_repair	nth	endonuclease III	endonuclease III|Nth	medium	Base excision repair of oxidized pyrimidines.
+3	base_excision_oxidative_repair	nei	endonuclease VIII	endonuclease VIII|Nei	medium	Base excision repair of oxidized bases.
+3	base_excision_oxidative_repair	nfo	endonuclease IV	endonuclease IV|Nfo	medium	AP endonuclease in base excision repair.
+3	base_excision_oxidative_repair	xthA	exonuclease III	exonuclease III|XthA	medium	AP endonuclease/exonuclease in base excision repair.
+3	oxidative_stress	katG	catalase-peroxidase	catalase-peroxidase|KatG	low	General oxidative stress buffering; supportive context only.
+3	oxidative_stress	katE	catalase HPII	catalase HPII|KatE	low	General oxidative stress buffering; supportive context only.
+3	oxidative_stress	sodA	superoxide dismutase Mn	superoxide dismutase|SodA	low	General oxidative stress buffering; supportive context only.
+3	oxidative_stress	sodB	superoxide dismutase Fe	superoxide dismutase|SodB	low	General oxidative stress buffering; supportive context only.
+3	oxidative_stress	sodC	superoxide dismutase Cu-Zn	superoxide dismutase|SodC	low	General oxidative stress buffering; supportive context only.
+3	oxidative_stress	ahpC	alkyl hydroperoxide reductase C	alkyl hydroperoxide reductase|AhpC	low	General peroxide stress buffering; supportive context only.
+3	oxidative_stress	ahpF	alkyl hydroperoxide reductase F	alkyl hydroperoxide reductase|AhpF	low	General peroxide stress buffering; supportive context only.
+3	redox_stress	trxA	thioredoxin	thioredoxin|TrxA	low	Redox homeostasis marker; supportive context only.
+3	redox_stress	trxB	thioredoxin reductase	thioredoxin reductase|TrxB	low	Redox homeostasis marker; supportive context only.
+3	redox_stress	gor	glutathione reductase	glutathione reductase|Gor	low	Redox homeostasis marker; supportive context only.
+3	general_stress	dps	DNA-binding protein from starved cells	DNA-binding protein from starved cells|Dps	low	DNA protection under stress; supportive context only.
+3	general_stress	rpoS	RNA polymerase sigma factor RpoS	RpoS|sigma S|RNA polymerase sigma factor	low	General stress regulator; supportive context only.
+

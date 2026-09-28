@@ -1,0 +1,17 @@
+---
+output_dir: "/path/to/project/output/community_uv_response"
+annotation_table: "/path/to/project/metadata/rmag_gene_annotations.tsv"
+sample_metadata: "/path/to/multiomics_pipeline/metadata/PRJEB79569_multiomics_samples.tsv"
+bam_manifest: "/path/to/project/metadata/rmag_metagenomic_bams.tsv"
+rmag_fasta: "/path/to/project/output/dereplication/all_dereplicated_rMAGs.fa"
+signature_table: "resources/uv_resistance_signatures.tsv"
+
+# Optional long-format table with gene_id, sample_id or sample_alias, raw_count
+# or count, and optional normalized_count.
+expression_counts: "/path/to/project/metadata/gene_expression_counts.tsv"
+
+instrain:
+  threads: 16
+  run_profiles: false
+  profile_root: "/path/to/project/output/community_uv_response/instrain/profiles"
+  compare_table: "/path/to/project/metadata/instrain_compare_fixture_or_summary.tsv"
