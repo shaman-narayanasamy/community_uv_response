@@ -18,12 +18,12 @@ annotations and accepts `--fail-on-conflicts`.
 
 ## Running the workflow
 
-Copy `config/examples/PRJEB79569_config.yml`, replace its paths and save the
+Use the example under `config/examples/`, replace its paths and save the
 configuration as an ignored local file:
 
 ```sh
 snakemake --snakefile workflows/community_uv_response.smk \
-  --configfile config/local_PRJEB79569.yml --cores 16 --dry-run
+  --configfile config/local_project.yml --cores 16 --dry-run
 ```
 
 Set `instrain.run_profiles: true` when the BAMs, reference FASTA and inStrain
@@ -43,10 +43,3 @@ Run the local fixture tests with:
 ```sh
 bash tests/run_fixture_tests.sh
 ```
-
-## PRJEB79569 analysis
-
-This module supplies annotations and descriptive population-genomic tables to
-[phage_uv_ecology_analysis](https://github.com/shaman-narayanasamy/phage_uv_ecology_analysis).
-Raw data: https://www.ebi.ac.uk/ena/browser/view/PRJEB79569.
-Transcriptome-wide statistical testing is performed in the analysis repository.
